@@ -1,6 +1,7 @@
 package com.example.borarachar
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.speech.tts.TextToSpeech
@@ -9,10 +10,14 @@ import android.text.TextWatcher
 import android.util.Log
 import android.widget.EditText
 import android.widget.TextView
+import android.view.View
+import android.view.WindowInsets
+import android.view.WindowInsetsController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.util.*
+
 
 class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     lateinit var qtdPessoas: EditText
@@ -25,6 +30,24 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // Usa WindowInsetsController para ocultar a barra de navegação
+            window.insetsController?.hide(WindowInsets.Type.statusBars() or WindowInsets.Type.systemBars())
+        }else {
+            // Usa setSystemUiVisibility para ocultar a barra de navegação
+            @Suppress("DEPRECATION")
+            window.decorView.systemUiVisibility = (View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
+
+            // Usa setOnSystemUiVisibilityChangeListener para detectar quando a barra de navegação é exibida novamente
+            @Suppress("DEPRECATION")
+            window.decorView.setOnSystemUiVisibilityChangeListener { visibility ->
+                if (visibility and View.SYSTEM_UI_FLAG_HIDE_NAVIGATION == 0) {
+                    // A barra de navegação está visível novamente
+                }
+            }
+        }
+
 
         qtdPessoas = findViewById(R.id.pessoas)
         qtdDinheiro = findViewById(R.id.valorTotal)

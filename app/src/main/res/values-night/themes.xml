@@ -9,6 +9,8 @@
         <item name="colorSecondary">@color/teal_200</item>
         <item name="colorSecondaryVariant">#000000</item>
         <item name="colorOnSecondary">@color/white</item>
+        <item name="colorContainer">@color/ic_launcher_background</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
