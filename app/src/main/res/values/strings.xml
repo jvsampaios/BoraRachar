@@ -9,4 +9,6 @@
     <string name="falar_valor">Falar Valor</string>
     <string name="r">R$</string>
     <string name="dinheiro_icone">Dinheiro icone</string>
+    <string name="hint">valor por pessoa</string>
+
 </resources>
