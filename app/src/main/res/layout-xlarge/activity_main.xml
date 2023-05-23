@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/design_default_color_on_primary"
+    android:backgroundTint="?colorOnPrimary"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="248dp"
+        android:layout_marginTop="36dp"
+        android:contentDescription="@string/bora_rachar_icone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="161dp"
+        android:layout_height="161dp"
+        android:layout_marginTop="44dp"
+        android:background="?colorContainer"
+        android:contentDescription="@string/cone_de_pessoas"
+        app:layout_constraintEnd_toStartOf="@+id/pessoas"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/pessoas" />
+
+    <EditText
+        android:id="@+id/pessoas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTintMode="screen"
+        android:ems="10"
+        android:hint="@string/_0"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="?colorOnSecondary"
+        android:textColorHint="?colorOnSecondary"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.548" />
+
+    <EditText
+        android:id="@+id/valorTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTintMode="screen"
+        android:ems="10"
+        android:hint="@string/_0_00"
+        android:inputType="numberDecimal"
+        android:textAlignment="center"
+        android:textColor="?colorOnSecondary"
+        android:textColorHint="?colorOnSecondary"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toEndOf="@+id/imageView6"
+        app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+    <ImageView
+        android:id="@+id/compartilhar"
+        android:layout_width="142dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="56dp"
+        android:background="?colorOnSecondary"
+        android:clickable="true"
+        android:contentDescription="@string/compartilhar"
+        app:backgroundTint="?colorOnSecondary"
+        app:ensureMinTouchTargetSize="true"
+        app:layout_constraintEnd_toStartOf="@+id/falar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:maxImageSize="120dp"
+        app:srcCompat="@drawable/compartilhar" />
+
+    <ImageView
+        android:id="@+id/falar"
+        android:layout_width="147dp"
+        android:layout_height="160dp"
+        android:clickable="true"
+        android:contentDescription="@string/falar_valor"
+        android:background="?colorOnSecondary"
+        app:backgroundTint="?colorOnSecondary"
+        app:layout_constraintBottom_toBottomOf="@+id/compartilhar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/compartilhar"
+        app:layout_constraintTop_toTopOf="@+id/compartilhar"
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="#FFFFFF"
+        app:srcCompat="@drawable/falando"
+        />
+
+    <TextView
+        android:id="@+id/valorResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="numberDecimal"
+        android:text="@string/zero"
+        android:textColor="?colorOnSecondary"
+        android:textSize="96sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        app:layout_constraintTop_toTopOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="104dp"
+        android:text="@string/r"
+        android:textColor="?colorOnSecondary"
+        android:textSize="96sp"
+        app:layout_constraintEnd_toStartOf="@+id/valorResultado"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/compartilhar" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="161dp"
+        android:layout_height="161dp"
+        android:layout_marginStart="80dp"
+        android:background="?colorContainer"
+        android:contentDescription="@string/dinheiro_icone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/money"
+        tools:layout_editor_absoluteY="560dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="72dp"
+        android:text="@string/hint"
+        android:textAlignment="center"
+        android:textColor="?colorOnSecondary"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/valorResultado"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
